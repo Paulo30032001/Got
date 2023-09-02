@@ -53,8 +53,9 @@ if(isset($_SESSION["usuario"]) ){
           <div style="font-size: 20px;color: red;">
            Usuario já existente no sistema 
          </div>
+         
            
-           <?php } // tudo que estiver dentro desse bloco está dentro do if idependente de estar em html ou php
+           <?php } // udo que estiver dentro desse bloco está dentro do if idependente de estar em html ou php
            ?> 
        </div>
 
