@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["usuario"]) ){
+  header("Location:/GOT/app/produtos.php");
+  
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,24 +17,20 @@
     <link rel="icon" type="image/png" href="ss.png">
 </head>
 <body>
-  <div class="login-box">
+  <div class="login-box" >
     <h2>Login</h2>
-    <form>
+    <form method="POST" action="controllers/LoginController.php">
       <div class="user-box">
-        <input type="text" name="" required="">
-        <label>CNPJ</label>
+        <input type="text" name="email" required>
+        <label>E-mail</label>
       </div>
       <div class="user-box">
-        <input type="password" name="" required="">
+        <input type="password" name="senha" required>
         <label>Senha</label>
       </div>
-      <a href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Entrar
-      </a>
+      <button type="submit">
+      Entrar
+      </button>
       <a class="cad"    href="cad.php">
         <span></span>
         <span></span>

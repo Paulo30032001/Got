@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(isset($_SESSION["usuario"]) ){
+  header("Location:/GOT/app/produtos.php");
+  
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -56,7 +62,7 @@
         Cadastrar
       </button>
 
-      <a class="log" href="teste.html">
+      <a class="log" href="teste.php">
         <span></span>
         <span></span>
         <span></span>
