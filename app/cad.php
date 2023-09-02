@@ -15,29 +15,29 @@
 <body>
   <div class="login-box">
     <h2>Speed Storage</h2>
-    <form method="POST" action="controllers/CadastroController.php">
+    <form method="POST" action="controllers/CadastroController.php" id="formulario">
       <div class="user-box">
         <input type="text" name="nomeEmpresa" required="">
         <label>Nome da Empresa</label>
       </div>
       <div class="user-box">
-        <input type="text" name="cnpj" required="">
+        <input type="text" name="cnpj" required>
         <label>CNPJ</label>
       </div>
       <div class="user-box">
-        <input type="text" name="endereco" required="">
+        <input type="text" name="endereco" required>
         <label>Endereço</label>
       </div>
       <div class="user-box">
-        <input type="email" name="email" required="">
+        <input type="email" name="email" required>
         <label>Email</label>
       </div>
       <div class="user-box">
-        <input type="password" name="senha" required="">
+        <input type="password" id="senha" name="senha" required>
         <label>Senha</label>
       </div>
       <div class="user-box">
-        <input type="password" name="" required="">
+        <input type="password" id="confirmacao">
         <label>Confirmar Senha</label>
       </div>
        <div>
@@ -45,7 +45,7 @@
         if (isset($_GET["usuario"]) && $_GET["usuario"] == true  ){
           ?>    
           <div style="font-size: 20px;color: red;">
-            usuario ou senha invalidos
+           Usuario já existente no sistema 
          </div>
            
            <?php } // tudo que estiver dentro desse bloco está dentro do if idependente de estar em html ou php
@@ -68,3 +68,16 @@
 </body>
 
 </html>
+
+<script>
+   var confirmacao = document.getElementById("confirmacao");
+   var senha = document.getElementById("senha");
+   var formulario = document.getElementById("formulario");
+   formulario.onsubmit = (e=>{
+       if(confirmacao.value != senha.value){
+         e.preventDefault();
+          alert('as senhas não conferem');
+       }
+
+   });
+</script>
